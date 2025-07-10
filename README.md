@@ -1,79 +1,130 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19918297&assignment_repo_type=AssignmentRepo)
-# MERN Stack Integration Assignment
+ 📰 MERN Blog App
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+A full-featured blog application built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**. This app supports blog post creation, editing, deletion, commenting, image uploads, pagination, filtering, and more.
 
-## Assignment Overview
+---
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+## 📁 Project Structure
 
-## Project Structure
+mern-blog-app/
+├── client/ # Frontend (React + Vite + TailwindCSS)
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ ├── services/
+│ │ └── App.jsx
+│ ├── public/
+│ └── .env.example
+├── server/ # Backend (Node.js + Express + MongoDB + Mongoose)
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── uploads/
+│ └── .env.example
+├── README.md
 
-```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+yaml
+Always show details
 
-## Getting Started
+Copy
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+---
 
-## Files Included
+## 🚀 Features Implemented
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+- 📝 CRUD blog posts (Create, Read, Update, Delete)
+- 📷 Upload featured images
+- 🔍 Search by title/content
+- 🏷️ Filter by category
+- 📄 Pagination for post lists
+- 💬 Add and view comments
+- 📦 RESTful API with proper error handling and validation
+- 🔐 Authentication-ready structure (easy to extend)
 
-## Requirements
+---
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+## ⚙️ Tech Stack
 
-## Submission
+- **Frontend:** React, Tailwind CSS, React Router, Axios
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose, Multer
+- **State Management:** React Hooks (useState, useEffect)
+- **Other:** Vite, PNPM, Nodemon, dotenv
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+---
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+## 🧪 Screenshots
 
-## Resources
+| Post List | Create Post | Single Post + Comments |
+|-----------|-------------|------------------------|
+| ![Post List](C:\Users\DG\OneDrive\Desktop\week-4-mern-integration-assignment-Julius-Nganga\screenshotss\Screenshot 2025-07-10 091312.png) | ![Create Post]() | ![Post Detail](C:\Users\DG\OneDrive\Desktop\week-4-mern-integration-assignment-Julius-Nganga\screenshotss\Screenshot 2025-07-10 091345.png) |
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+---
+
+## 📦 Setup Instructions
+
+### 🛠 Requirements
+
+- Node.js >= v18
+- MongoDB local or Atlas cluster
+- PNPM (preferred): `npm i -g pnpm`
+
+---
+
+### 🖥 Server Setup (Backend)
+
+```bash
+cd server
+pnpm install
+cp .env.example .env
+# Update .env with your MongoDB URI and PORT
+pnpm dev
+🌐 Client Setup (Frontend)
+bash
+Always show details
+
+Copy
+cd client
+pnpm install
+cp .env.example .env
+# Set VITE_API_BASE_URL (e.g. http://localhost:5000/api)
+pnpm dev
+🔐 Environment Variables
+🗂 server/.env.example
+env
+Always show details
+
+Copy
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+UPLOAD_FOLDER=uploads
+🗂 client/.env.example
+env
+Always show details
+
+Copy
+VITE_API_BASE_URL=http://localhost:5000/api
+📘 API Documentation
+📝 Posts
+Method	Endpoint	Description
+GET	/api/posts	List all posts (supports search, page, limit, category)
+GET	/api/posts/:id	Get single post
+POST	/api/posts	Create new post
+PUT	/api/posts/:id	Update post
+DELETE	/api/posts/:id	Delete post
+
+🗂 Categories
+Method	Endpoint
+GET	/api/categories
+POST	/api/categories
+
+💬 Comments
+Method	Endpoint	Description
+GET	/api/posts/:id/comments	List comments for a post
+POST	/api/posts/:id/comments	Add a new comment
+
+🖼 Uploads
+Method	Endpoint
+POST	/api/upload (form-data with image)
+
+🙌 Credits
+Built with ❤️ using the MERN stack.
