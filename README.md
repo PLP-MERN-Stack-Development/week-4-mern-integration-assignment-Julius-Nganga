@@ -56,7 +56,7 @@ Copy
 
 | Post List | Create Post | Single Post + Comments |
 |-----------|-------------|------------------------|
-| ![Post List](C:\Users\DG\OneDrive\Desktop\week-4-mern-integration-assignment-Julius-Nganga\screenshotss\Screenshot 2025-07-10 091312.png) | ![Create Post]() | ![Post Detail](C:\Users\DG\OneDrive\Desktop\week-4-mern-integration-assignment-Julius-Nganga\screenshotss\Screenshot 2025-07-10 091345.png) |
+| ![Post List](screenshotss/Screenshot%202025-07-10%20091345.png) | ![backend](screenshotss/Screenshot%202025-07-10%20091312.png) | ![Post Detail]() |
 
 ---
 
